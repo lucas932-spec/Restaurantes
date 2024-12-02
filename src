@@ -1,0 +1,54 @@
+create database restaurante;
+use restaurante;
+
+create table clientes (
+id_clientes int auto_increment primary key,
+nome varchar (50),
+telefone varchar (15)
+);
+
+create table pratos (
+id_pratos int auto_increment primary key,
+nome varchar (50),
+preco decimal (10,2)
+);
+
+create table pedidos (
+id_pedidos int auto_increment primary key,
+id_cliente int,
+data_pedido datetime
+);
+
+create table itens (
+id_pedidos int auto_increment primary key,
+id_cliente int,
+id_prato int,
+quantitade decimal (10,2)
+);
+
+insert into clientes (id_clientes,nome,telefone) values
+('1','lucas','48 999467136'),
+('2','jose','48 976439815'),
+('3','rene','48 986065542'),
+('4','lara','48 900245578'),
+('5','marcelo','48 991458890');
+
+insert into pratos (id_pratos,nome,preco) values
+('1','picanha','80'),
+('2','macarrão ao molho branco','60'),
+('3','porção de batata frita (100)','30'),
+('4','onion rings','25'),
+('5','tainha','35');
+
+insert into pedidos (id_pedido) values
+(1),
+(2),
+(3);
+
+insert into item(id_pedido,id_prato,quantidade) values
+(1,2,3),
+(2,1,3),
+(2,2,1),
+(3,5,3),
+(3,4,1),
+(2,3,2);
